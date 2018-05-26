@@ -35,18 +35,18 @@ export class TimeTrackerComponent implements OnInit {
     clearInterval(this.intervalRef)
     this.tracker.calculateDuration()
     this.tracker.description = description.value
-
-    this.change.emit(this.tracker)
     
-    this.service.postData(JSON.stringify(this.tracker))
+    let tempTracker = this.tracker
+    this.service.postData(JSON.stringify(tempTracker))
         .subscribe(res => {
-          console.log(res)
-          this.tracker = new Tracker()
-          this.displayTime = '00:00:00'
-          description.value = ''
+          this.change.emit(tempTracker)
         }, err => {
           console.log(err)
         })
+        
+    this.tracker = new Tracker()
+    this.displayTime = '00:00:00'
+    description.value = ''
 
   }
 

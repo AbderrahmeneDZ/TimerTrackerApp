@@ -1,11 +1,11 @@
 <div class="container py-5">
-  <div *ngIf="authService.isLogin">
+  <div *ngIf="isLogin">
     <time-tracker (change)="onNewTracker($event)"></time-tracker>
     <div class="mt-4">
       <stories-list [trackers]="trackerList"></stories-list>
     </div>
   </div>
-  <div *ngIf="!authService.isLogin" class="alert alert-info text-center">
+  <div *ngIf="!isLogin" class="alert alert-info text-center">
     You're not login, please click on<a routerLink="/login" class="btn btn-link"><u>here</u></a>or<a routerLink="/register" class="btn btn-link"><u>here</u></a>to register.
   </div>
 </div>

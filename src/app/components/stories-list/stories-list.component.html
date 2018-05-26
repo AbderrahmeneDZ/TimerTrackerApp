@@ -1,3 +1,21 @@
+<div class="mb-2 row">
+    <div class="col-md-5">
+        <div class="form-group">
+            <input #startDate class="form-control" placeholder="Starting Date format : dd/mm/yyyy hh:mm:ss">
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="form-group">
+            <input #endDate id="endingDate" class="form-control" placeholder="Ending Date format : dd/mm/yyyy hh:mm:ss">
+        </div>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" (click)="onSubmitDate(startDate,endDate)">Filter</button>
+    </div>
+</div>
+<div class="alert alert-danger my-1" *ngIf="errorMessage">
+    {{  errorMessage }}
+</div>
 <div *ngIf="trackerList.length > 0" class="card card-body">
     <story-item *ngFor="let tracker of trackerList" [trackerItem]="tracker"></story-item>
 </div>

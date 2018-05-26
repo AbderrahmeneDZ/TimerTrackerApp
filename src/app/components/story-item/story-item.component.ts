@@ -17,7 +17,7 @@ export class StoryItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.tracker)
+    
     this.startAt =  this.format(this.tracker.startAt.getHours())+':'+this.format(this.tracker.startAt.getMinutes())
     this.endAt =  this.format(this.tracker.endAt.getHours())+':'+this.format(this.tracker.endAt.getMinutes())
     this.duration =  this.format(new Date(this.tracker.duration).getHours() -1)

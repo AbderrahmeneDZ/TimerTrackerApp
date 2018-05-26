@@ -11,13 +11,15 @@ export class HomeComponent implements OnInit {
 
   constructor(private authService:AuthService) { }
   trackerList : Tracker[] = []
+  isLogin
   ngOnInit() {
-
+    this.isLogin = this.authService.isLogin
   }
 
   onNewTracker(tracker){
     if(tracker instanceof(Tracker)){
-      this.trackerList.push(tracker)
+      console.log(tracker)
+      this.trackerList.splice(0,0,tracker)
     }
   }
 }
