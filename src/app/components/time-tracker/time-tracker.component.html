@@ -1,0 +1,39 @@
+<div class="card card-body" [class.mat-elevation-z3]="isTracking">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <textarea #description rows="4" class="form-control" placeholder="Description"></textarea>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+
+      <!-- button icon START -->
+      <span (click)="startTracking()" *ngIf="!isTracking && !tracker.startAt">
+        <i class="material-icons mr-2 icon-start">play_circle_filled</i>
+      </span>
+
+      <!-- button icon RESTART -->
+      <span (click)="restartTracking()" *ngIf="isTracking && !isPaused">
+        <i class="material-icons mr-2 icon-disabled">restore</i>
+      </span>
+
+      <!-- button icon PAUSE -->
+      <span (click)="pauseTracking()" *ngIf="!isPaused && isTracking">
+        <i class="material-icons mr-2 icon-pause">pause_circle_filled</i>
+      </span>
+      <!-- button icon RESUME -->
+      <span (click)="resumeTracking()" *ngIf="isPaused && !isTracking">
+        <i class="material-icons mr-2 icon-pause">play_circle_filled</i>
+      </span>
+
+      <!-- button icon STOP -->
+      <span (click)="stopTracking(description)" *ngIf="isTracking && !isPaused">
+        <i class="material-icons mr-2 icon-alert">stop</i>
+      </span>
+
+      <!-- display elapsed Time-->
+      <h5> Elapsed Time </h5>
+      <h3> {{displayTime}} </h3>
+    </div>
+  </div>
+</div>

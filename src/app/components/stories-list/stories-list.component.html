@@ -1,0 +1,6 @@
+<div *ngIf="trackerList.length > 0" class="card card-body">
+    <story-item *ngFor="let tracker of trackerList" [trackerItem]="tracker"></story-item>
+</div>
+<div *ngIf="trackerList.length === 0" class="text-center alert alert-info">
+    Cannot found any story
+</div>

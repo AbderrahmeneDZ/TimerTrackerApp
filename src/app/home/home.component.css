@@ -1,0 +1,19 @@
+.material-icons{
+    font-size: 48px;
+    cursor: pointer;
+}
+.icon-disabled{
+    color: #ccc;
+}
+.icon-start{
+    color: #4CAF50;
+}
+.icon-alert{
+    color: #f44336;
+}
+.icon-pause{
+    color: #FF5722;
+}
+h5{
+    font-weight: 500;
+}

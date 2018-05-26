@@ -1,0 +1,18 @@
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5 card card-body mat-elevation-z3">
+      <h3 class="text-center mb-3">Time Tracker App</h3>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <input type="text" id="email" placeholder="Email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" placeholder="Password" class="form-control" formControlName="password">
+        </div>
+      </form>
+      <button class="btn btn-primary" [disabled]="!form.valid" (click)="onButtonClicked()">Login</button>
+      <a routerLink='/register' class="btn btn-link text-right">No account yet ? create one.</a>
+      <div class="alert alert-danger mt-3" *ngIf="errorMessage"> {{errorMessage}} </div>
+    </div>
+  </div>
+</div>
