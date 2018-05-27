@@ -1,5 +1,20 @@
 <div class="container py-5">
-  <p>Todo : add app description, explain how users can explor it</p>
+  <h2>This is a simple tracking application</h2>
+  <h1>How it works ? </h1>
+  <p>to start tracking just click on
+    <span><i class="material-icons icon-start mx-1">play_circle_filled</i></span>
+    so you can remark that the time was started.
+  </p>
+  <p>you can also reset the timer with 
+    <span><i class="material-icons mx-1">restore</i></span>
+    or pause and resume with <i class="material-icons mx-1">pause_circle_filled</i>
+  </p>
+  <p>
+    finally, you want to finish tracking, add description on the description field, and press on
+    <span><i class="material-icons mx-1 icon-alert">stop</i></span>
+  </p>
+  <p>these information will posted to the server and added to your list bellow</p>
+
   <div *ngIf="isLogin">
     <time-tracker (change)="onNewTracker($event)"></time-tracker>
     <div class="mt-4">
@@ -7,6 +22,12 @@
     </div>
   </div>
   <div *ngIf="!isLogin" class="alert alert-info text-center">
-    You're not login, please click on<a routerLink="/login" class="btn btn-link"><u>here</u></a>or<a routerLink="/register" class="btn btn-link"><u>here</u></a>to register.
+    You're not login, please click on
+    <a routerLink="/login" class="btn btn-link">
+      <u>here</u>
+    </a>or
+    <a routerLink="/register" class="btn btn-link">
+      <u>here</u>
+    </a>to register.
   </div>
 </div>

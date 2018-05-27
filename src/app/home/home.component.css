@@ -1,19 +1,30 @@
-.material-icons{
-    font-size: 48px;
+p {
+    display: inline-flex;
+    vertical-align: middle;
+    font-size: 24px;
+}
+
+.material-icons {
+    font-size: 30px;
     cursor: pointer;
 }
-.icon-disabled{
+
+.icon-disabled {
     color: #ccc;
 }
-.icon-start{
+
+.icon-start {
     color: #4CAF50;
 }
-.icon-alert{
+
+.icon-alert {
     color: #f44336;
 }
-.icon-pause{
+
+.icon-pause {
     color: #FF5722;
 }
-h5{
+
+h5 {
     font-weight: 500;
 }
