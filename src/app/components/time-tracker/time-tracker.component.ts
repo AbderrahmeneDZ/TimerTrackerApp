@@ -18,6 +18,8 @@ export class TimeTrackerComponent implements OnInit {
 
   isTracking: boolean = false
   isPaused: boolean = false
+  isOnProgress: boolean = false
+  SuccessfulMsg = null
   intervalRef: any
   displayTime: string = '00:00:00'
   tracker: Tracker = new Tracker()
@@ -37,11 +39,18 @@ export class TimeTrackerComponent implements OnInit {
     this.tracker.description = description.value
     
     let tempTracker = this.tracker
+    this.isOnProgress = true
     this.service.postData(JSON.stringify(tempTracker))
         .subscribe(res => {
+          this.isOnProgress = false
+          this.SuccessfulMsg = 'Post Created Successfully.'
+          setTimeout(() => {
+              this.SuccessfulMsg = null
+          }, 3000);
           this.change.emit(tempTracker)
         }, err => {
           console.log(err)
+          this.isOnProgress = false
         })
         
     this.tracker = new Tracker()

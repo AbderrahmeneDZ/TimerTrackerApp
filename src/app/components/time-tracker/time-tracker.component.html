@@ -36,4 +36,10 @@
       <h3> {{displayTime}} </h3>
     </div>
   </div>
+  <div class="alert alert-info" *ngIf="isOnProgress">
+    Posting your information, Plaese wait
+  </div>
+  <div class="alert alert-success" *ngIf="SuccessfulMsg">
+      {{SuccessfulMsg}}
+  </div>
 </div>
